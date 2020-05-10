@@ -9,6 +9,8 @@ function setup(){
     database = firebase.database();
     var saveButton = select('#saveButton');
     saveButton.mousePressed(saveDrawing);
+    var clearButton = select('#clearButton')
+    clearButton.mousePressed(clearDrawing);
 }
 
 function startPath(){
@@ -47,4 +49,8 @@ function draw(){
 function saveDrawing(){
     var ref = database.ref('drawings')
     ref.push(drawing); 
+}
+function clearDrawing(){
+    drawing = [];
+
 }
